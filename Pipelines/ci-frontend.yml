@@ -1,0 +1,14 @@
+name: CI - Frontend
+
+on:
+  pull_request:
+    paths:
+      - "src/frontend/**"
+      - "docs/architecture/frontend/**"
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Frontend technology TBD"

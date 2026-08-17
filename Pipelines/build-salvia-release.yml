@@ -1,0 +1,15 @@
+name: Build Salvia Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "TODO build immutable Salvia release ${{ inputs.version }}"

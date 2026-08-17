@@ -1,0 +1,27 @@
+name: Deploy Salvia Client
+
+on:
+  workflow_dispatch:
+    inputs:
+      client_code:
+        required: true
+        type: string
+      environment_name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment_name }}
+    concurrency:
+      group: salvia-${{ inputs.environment_name }}
+      cancel-in-progress: false
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "TODO explicit client DB migration"
+      - run: echo "TODO deploy Salvia ${{ inputs.version }}"
